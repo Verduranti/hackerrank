@@ -21,26 +21,15 @@ using namespace std;
 // assumes a list with more than one item, enforced below
 int lonelyinteger(vector <int> a) {
 
-	sort(a.begin(), a.end());
 	vector<int>::iterator iter;
-	vector<int>::iterator trailing;
+	int lonely = *(a.begin());
 	
-	trailing = a.begin();
-	bool first = true;
 	for(iter = a.begin()+1; iter != a.end(); iter++)
 	{
-		if(*iter != *trailing) {
-			if(!first)
-				return *iter;
-		}
-		else {
-			first = true;
-		}
-		trailing++;
+		lonely ^= *iter;
 	}
 	
-	return *trailing;
-
+	return lonely;
 }
 int main() {
     int res;
