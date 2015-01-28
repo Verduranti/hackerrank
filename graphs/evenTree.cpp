@@ -38,14 +38,8 @@ int Node::countChildren()
 		vector<Node*>::iterator iter;
 		for(iter = this->children.begin(); iter < this->children.end(); iter++)
 		{
-			if((*iter)->parent != NULL) //Gloriously hacktastic
-			//This lovely hack will make sure that I only process children who
-			//want to continue to be children, not ones that have freed themselves
-			//by setting their parent to null
-			{
-				count += 1; // for the current child
-				count += (*iter)->countChildren(); // for the grandchildren
-			}
+			count += 1; // for the current child
+			count += (*iter)->countChildren(); // for the grandchildren
 		}
 	}
 	return count;
@@ -84,7 +78,7 @@ int main() {
     int countTree = 0;
     //Turns out you can reverse iterate through the tree from the leaf nodes back up
     //and if you find an even tree, sever it and increment the counter (1 new tree, one
-    //removed edge). Viola, problem sloved.
+    //removed edge). Viola, problem solved.
     
     vector<Node*> newRoots;
     vector<Node*>::reverse_iterator rIter;
@@ -96,8 +90,6 @@ int main() {
     		if(node->parent != NULL)
     		{
     		    countTree++;
-//     			Node* parent = node->parent;
-//     			node->parent = NULL;
     		}
     	}
     }
