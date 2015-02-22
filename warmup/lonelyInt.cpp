@@ -1,3 +1,11 @@
+//https://www.hackerrank.com/challenges/lonely-integer
+//Given a list of ints where all but one of the ints is doubled
+//For example 1,1,2,2,3
+//Figure out which number is not paired.
+
+//Most solutions suck performance wise - you need to know that XOR will save you
+
+//Let's just include everything, shall we. (I was given this part. :) )
 #include <map>
 #include <set>
 #include <list>
@@ -15,10 +23,12 @@
 #include <sstream>
 #include <iostream>
 #include <algorithm>
+
 using namespace std;
+
 // who gave me this shell code... ugh. A C programmer, I'm sure.
 
-// assumes a list with more than one item, enforced below
+// For lists of one item - this code should just return that one item.
 int lonelyinteger(vector <int> a) {
 
 	vector<int>::iterator iter;
@@ -31,6 +41,7 @@ int lonelyinteger(vector <int> a) {
 	
 	return lonely;
 }
+
 int main() {
     int res;
     

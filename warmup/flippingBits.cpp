@@ -1,3 +1,8 @@
+//https://www.hackerrank.com/challenges/flipping-bits
+//List of 32 bit signed ints.
+//Flip all the bits, output the result.
+//Convenient that C++ has an operator for that
+
 #include <cmath>
 #include <cstdio>
 #include <vector>

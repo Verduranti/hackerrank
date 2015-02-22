@@ -1,3 +1,9 @@
+//https://www.hackerrank.com/challenges/the-love-letter-mystery
+//Change all the words in a paragraph into palindromes
+//Palindromes are created by reducing the value of a latter (from d to c, say)
+//No letter can go lower than 'a'
+//Count the number of operations needed to convert the words to palidromes
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -7,6 +13,7 @@ using namespace std;
 
 int countPalindromeSteps(string s) {
 	int steps = 0;
+	//Palindromes only need a for loop that goes halfway through
 	for (int i =0; i < s.size()/2; i++) {
 		while(*(s.begin()+i) != *(s.end()-i-1))
 		{
@@ -22,7 +29,7 @@ int countPalindromeSteps(string s) {
 				s.replace(s.end()-i-1,s.end()-i,bob);
 			}
 			//Had to construct a string, replace doesn't like char
-			//Also, dammit I figot how * works.... sheesh. Took forever. Many infinite loops.
+			//Also, dammit I forgot how * works.... sheesh. Took forever. Many infinite loops.
 			
 			steps++;
 			//cout << bob << " " << s << endl;

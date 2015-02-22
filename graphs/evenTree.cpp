@@ -5,7 +5,6 @@
 #include <algorithm>
 using namespace std;
 
-
 //Note: I'm 100% sure this code will only work for an ACYCLICAL graph
 //Otherwise it'll get stuck. Honest. Don't try it.
 

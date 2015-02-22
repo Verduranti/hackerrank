@@ -1,3 +1,8 @@
+//https://www.hackerrank.com/challenges/alternating-characters
+//How many characters do you have to delete to get to a string that contains
+//alternating characters
+//String will contain only A and B characters
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -26,8 +31,7 @@ int dels(string s) {
     return count;
 }
 
-int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+int main() { 
     int T;
     cin >> T;
     while (T--) {

@@ -1,3 +1,7 @@
+//https://www.hackerrank.com/challenges/maximizing-xor
+//I really had trouble understanding what this one was asking for.
+//In the end it seems a brute force solution was efficient enough to pass all cases
+
 #include <map>
 #include <set>
 #include <list>
