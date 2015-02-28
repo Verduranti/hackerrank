@@ -25,51 +25,21 @@ int makeMatrix(int size_a, int size_b, int a[], int b[], int** table)
 }
 
 int main() {
-//     int a, b;
-// 
-//     cin >> a >> b;
-// 
-// 	int lista[a];
-// 	int listb[b];
-// 	
-// 	//Get the two strings
-// 	if(a < b)
-// 	{
-//     	for(int i = 0; i < a; i++){
-//     		cin >> lista[i];
-//     	}
-//     	for(int i = 0; i < b; i++){
-//     		cin >> listb[i];
-//     	}
-//     }
-//     else //just to enforce that list a is always the shorter list
-//     {
-//     	int temp = a;
-//     	a = b;
-//     	b = temp;
-//     	for(int i = 0; i < b; i++){
-//     		cin >> listb[i];
-//     	}
-//     	for(int i = 0; i < a; i++){
-//     		cin >> lista[i];
-//     	}
-//     }
+    int a, b;
+
+    cin >> a >> b;
+
+	int lista[a];
+	int listb[b];
 	
-// int a=9, b=15;
-// int lista[] = {3, 9, 8, 3, 9, 7, 9, 7, 0};
-// int listb[] = {3, 3, 9, 9, 9, 1, 7, 2, 0, 6, 1, 1, 1, 1, 1};
+	//Get the two strings
+    for(int i = 0; i < a; i++){
+    	cin >> lista[i];
+    }
+    for(int i = 0; i < b; i++){
+    	cin >> listb[i];
+    }
 
-int a=50, b=46;
-int lista[] = {16, 27, 89, 79, 60, 76, 24, 88, 55, 94, 57, 42, 56, 74, 24, 95, 55, 33, 69, 29, 14, 7, 94, 41, 8, 71, 12, 15, 43, 3, 23, 49, 84, 78, 73, 63, 5, 46, 98, 26, 40, 76, 41, 89, 24, 20, 68, 14, 88, 26};
-int listb[] = {27, 76, 88, 0, 55, 99, 94, 70, 34, 42, 31, 47, 56, 74, 69, 46, 93, 88, 89, 7, 94, 41, 68, 37, 8, 71, 57, 15, 43, 89, 43, 3, 23, 35, 49, 38, 84, 98, 47, 89, 73, 24, 20, 14, 88, 75};
-
-// int b=23, a=20;
-// int listb[] = {15, 43, 3, 23, 49, 84, 78, 73, 63, 5, 46, 98, 26, 40, 76, 41, 89, 24, 20, 68, 14, 88, 26};
-// int lista[] = {57, 15, 43, 89, 43, 3, 23, 35, 49, 38, 84, 98, 47, 89, 73, 24, 20, 14, 88, 75};
-	
-
-// 27 76 88 55 94 42 56 74 69 7 94 41 8 71 15 43 3 23 49 84 98 89 24 20 14 88
-// 27 76 88 55 94 42 56 74 69 7 94 41 8 71 15 43 3 23 49 84 98 89 24 20 14 88
 	//Initialize the memoization table
 	int** table;
 	table = new int* [a+1];
@@ -85,28 +55,14 @@ int listb[] = {27, 76, 88, 0, 55, 99, 94, 70, 34, 42, 31, 47, 56, 74, 69, 46, 93
 	int length = makeMatrix(a, b, lista, listb, table);
 	int longest[length];
 	
-	//Test for matrix
-// 	for(int i = 0; i <= a; i++)
-// 	{
-// 		for(int j = 0; j <= b; j++)
-// 		{
-// 			cout << table[i][j];
-// 		}
-// 		cout << endl;
-// 	}
-	
-//	cout << length << endl;
 	int lengthCounter = length;
-	int max_i = a, max_j = b;
 	int rank = length;
-	for(int i = max_i; i > 0; --i) {
-		for(int j = max_j; j > 0; --j) {
+	for(int i = a; i > 0; --i) {
+		for(int j = b; j > 0; --j) {
 			if(table[i][j] > table[i][j-1] && 
 			   table[i][j] > table[i-1][j] &&
 			   table[i][j] == rank) {
 				longest[--lengthCounter] = listb[j-1];
-				//max_i = i-2;
-				//max_j = j-2;
 				rank--;
 			}
 			//cout << listb[j-1];
