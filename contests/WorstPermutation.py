@@ -1,7 +1,7 @@
-#(N, K) = [int(i) for i in input().split(" ")]
-#numList = [int(i) for i in input().split(" ")]
-(N,K) = [11, 2]
-numList = [11, 1, 2, 3, 5, 4, 6, 7, 8, 9, 10]
+(N, K) = [int(i) for i in input().split(" ")]
+numList = [int(i) for i in input().split(" ")]
+#(N,K) = [11, 2]
+#numList = [11, 1, 2, 3, 5, 4, 6, 7, 8, 9, 10]
 
 i = 0
 maxSwaps = K
